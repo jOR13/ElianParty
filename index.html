@@ -130,10 +130,6 @@
 		<button onclick="confirmarAsistencia()" style="width: 100%; padding: 10px; margin-bottom: 10px;">Confirmar
 			asistencia</button>
 
-
-
-		<a href="https://w > class=" button">Regalar un regalo</a>
-
 		<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon"
 			class="batman-icon" style="top: 0; left: 0; width: 100px; height: 100px;">
 
@@ -177,7 +173,7 @@
 				alert('Por favor, ingresa tu nombre y la cantidad de personas que asistirán a la fiesta.');
 			} else {
 				alert('¡Gracias por confirmar tu asistencia, ' + nombre + '! Nos vemos el 15 de abril a las 16:00 hrs.');
-				let message = 'Hola Elián, ' + nombre + ' confirmó su asistencia a tu fiesta de cumpleaños. Serán ' + cantidad + ' personas.';
+				let message = 'Hola Elián, me gustaría confirmar mi asistencia a tu fiesta de cumpleaños. Mi nombre es ' + nombre + ' y asistiré con ' + cantidad + ' persona(s).';
 				let url = 'https://api.whatsapp.com/send?phone=+526566763854&text=' + message;
 				window.open(url, '_blank');
 			}
