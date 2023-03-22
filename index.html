@@ -1,99 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<script src="index.js"></script>
 	<title>Fiesta de Cumpleaños de Elián 🎉🎉 </title>
-	<style>
-		body {
-			background: rgb(2, 0, 36);
-			background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(246, 227, 27, 1) 2%);
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-			line-height: 1.5;
-			margin: 0;
-			padding: 0;
-		}
-
-		.container {
-			max-width: 800px;
-			margin: 0 auto;
-			padding: 20px;
-		}
-
-		h1 {
-			font-size: 36px;
-			font-weight: bold;
-			text-align: center;
-			margin-bottom: 20px;
-		}
-
-		img {
-			display: block;
-			margin: 0 auto;
-			max-width: 100%;
-			height: auto;
-		}
-
-		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-
-		li {
-			margin-bottom: 10px;
-			padding-left: 50px;
-			margin-right: 20px;
-			background: url('https://seeklogo.com/images/B/batman-logo-B762CFD142-seeklogo.com.png') no-repeat left center;
-			background-size: 40px 20px;
-		}
-
-		.button {
-			display: inline-block;
-			padding: 10px 20px;
-			background-color: #f44336;
-			color: #fff;
-			font-size: 18px;
-			font-weight: bold;
-			text-decoration: none;
-			border-radius: 5px;
-			margin-top: 20px;
-			margin-bottom: 40px;
-			transition: background-color 0.3s ease;
-		}
-
-		.button:hover {
-			background-color: #db4437;
-		}
-
-		@keyframes rain {
-			from {
-				transform: translateY(-100%);
-			}
-
-			to {
-				transform: translateY(100%);
-			}
-		}
-
-		img.batman-icon {
-			position: absolute;
-			animation: rain 1s linear infinite;
-		}
-	</style>
 </head>
 
 <body>
 	<div class="container">
+
+		<audio autoplay loop>
+			<source src="batman-song.m4a" type="audio/mpeg">
+		</audio>
+
 		<h1>Fiesta de Cumpleaños de Elián 🎉🎉 </h1>
 
 		<div class="columns is-centered">
 			<div class="column ">
-				<img src="https://i.pinimg.com/564x/44/8a/7b/448a7b71b06f35aef4c731e670604eb2.jpg"
-					alt="Banner de Batman">
+				<img src="assets/batman-banner.png" alt="Banner de Batman">
 			</div>
 			<div class="column ">
 				<h2 class="subtitle is-4 has-text-weight-bold has-text-centered">Fecha y Hora 📅 🕦 </h2>
@@ -105,19 +32,18 @@
 
 				</br>
 
-
 				<div class="has-text-centered">
 					<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108678.13740174871!2d-106.46653968109675!3d31.65597211728834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75c3558af87d9%3A0x5dd2e4bfe5207314!2sTIC%20TOC%20Play%20Time!5e0!3m2!1ses!2smx!4v1679461096972!5m2!1ses!2smx"
-					width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"></iframe>
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108678.13740174871!2d-106.46653968109675!3d31.65597211728834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75c3558af87d9%3A0x5dd2e4bfe5207314!2sTIC%20TOC%20Play%20Time!5e0!3m2!1ses!2smx!4v1679461096972!5m2!1ses!2smx"
+						width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
 
 				</br>
 				</br>
 
-
 				<h2 class="subtitle is-4 has-text-weight-bold has-text-centered">Actividades 🎮</h2>
+
 				<ul>
 					<li> Juegos con temática de Batman</li>
 					<li> Piñata</li>
@@ -125,83 +51,47 @@
 					<li> Sesión de fotos con un stand de Batman</li>
 				</ul>
 
-
-
-				<h2 class="subtitle is-4 has-text-weight-bold has-text-centered">Alimentación 🍕 🌭 🍺</h2>
+				<h2 class="subtitle is-4 has-text-weight-bold has-text-centered">Alimentos 🍕 🌭 🥤</h2>
 				<p>También habrá alimentos y bebidas para todos los asistentes, incluyendo:</p>
+
 				<ul>
 					<li> Pizza 🍕</li>
 					<li> Hot dogs 🌭</li>
-					<li> Refrescos 🥤</li>
+					<li> Aguas frescas 🥤</li>
 				</ul>
 
 				<h2 class="subtitle is-4 has-text-weight-bold has-text-centered">Confirmar asistencia 🎉 ✅</h2>
-
 				<input type="text" id="name" placeholder="Nombre completo"
 					style="width: 100%; padding: 10px; margin-bottom: 10px;">
 				<input type="number" id="cantidad" placeholder="Cantidad de personas"
 					style="width: 100%; padding: 10px; margin-bottom: 10px;" min="1" max="3">
-
-				<button onclick="confirmarAsistencia()"
-					style="width: 100%; padding: 10px; margin-bottom: 10px;">Confirmar
+				<button onclick="confirmarAsistencia()" style="width: 100%; padding: 10px; margin-bottom: 10px;">Confirmar
 					asistencia</button>
 
 			</div>
-			<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon"
-				class="batman-icon" style="top: 0; left: 0; width: 100px; height: 100px;">
+			<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon" class="batman-icon"
+				style="top: 0; left: 0; width: 100px; height: 100px;">
 
-			<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon"
-				class="batman-icon" style="top: 0; left: 0; width: 100px; height: 100px;">
+			<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon" class="batman-icon"
+				style="top: 0; left: 0; width: 100px; height: 100px;">
 
-			<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon"
-				class="batman-icon" style="top: 0; left: 0; width: 50px; height: 50px;">
+				<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon" class="batman-icon"
+				style="top: 0; left: 0; width: 100px; height: 100px;">
 
-			<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon"
-				class="batman-icon" style="top: 0; left: 0; width: 50px; height: 50px;">
+			<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon" class="batman-icon"
+				style="top: 0; left: 0; width:50px; height:50px;">
 
+				<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon" class="batman-icon"
+				style="top: 0; left: 0; width:50px; height:50px;">
 
+			<img src="assets/Elian.png" alt="Batman Icon" class="batman-icon"
+				style="top: 0; left: 0; width:100px; height:100px;">
 
+				<img src="assets/Elian.png" alt="Batman Icon" class="batman-icon"
+				style="top: 0; left: 0; width:100px; height:100px;">
 
+				<img src="assets/Elian.png" alt="Batman Icon" class="batman-icon"
+				style="top: 0; left: 0; width:100px; height:100px;">
 		</div>
 </body>
-
 </html>
-
-<script>
-
-	window.addEventListener('load', () => {
-		const icons = document.querySelectorAll('.batman-icon');
-		const iconCount = icons.length;
-		const docHeight = document.documentElement.clientHeight;
-
-		for (let i = 0; i < iconCount; i++) {
-			let icon = icons[i];
-			let delay = Math.random() * 5;
-			let xPos = Math.random() * 100;
-			let yPos = Math.random() * docHeight;
-
-			icon.style.left = xPos + '%';
-			icon.style.top = yPos + 'px';
-			icon.style.animationDelay = delay + 's';
-		}
-	});
-
-	function confirmarAsistencia() {
-		let nombre = document.getElementById('name').value;
-		let cantidad = document.getElementById('cantidad').value;
-		if (isNaN(cantidad)) {
-			alert('Por favor, ingresa un número válido para la cantidad de personas que asistirán a la fiesta.');
-		} else if (cantidad > 3) {
-			alert('Por favor, ingresa un número menor o igual a 3 para la cantidad de personas que asistirán a la fiesta.');
-		} else {
-			if (nombre == '' || cantidad == '') {
-				alert('Por favor, ingresa tu nombre y la cantidad de personas que asistirán a la fiesta.');
-			} else {
-				alert('¡Gracias por confirmar tu asistencia, ' + nombre + '! Nos vemos el 15 de abril a las 16:00 hrs.');
-				let message = 'Hola Elián, me gustaría confirmar mi asistencia a tu fiesta de cumpleaños. Mi nombre es ' + nombre + ' y asistiré con ' + cantidad + ' persona(s).';
-				let url = 'https://api.whatsapp.com/send?phone=+526566763854&text=' + message;
-				window.open(url, '_blank');
-			}
-		}
-	}
-</script>
