@@ -67,6 +67,21 @@
 		.button:hover {
 			background-color: #db4437;
 		}
+
+		@keyframes rain {
+			from {
+				transform: translateY(-100%);
+			}
+
+			to {
+				transform: translateY(100%);
+			}
+		}
+
+		img.batman-icon {
+			position: absolute;
+			animation: rain 1s linear infinite;
+		}
 	</style>
 </head>
 
@@ -102,4 +117,46 @@
 			<li> Pizza 🍕</li>
 			<li> Hot dogs 🌭</li>
 			<li> Refrescos 🥤</li>
-			<li>
+		</ul>
+
+		<h2>Regalos 🎁</h2>
+
+		<p>Si quieres participar en la fiesta de cumpleaños de Elián, puedes hacerlo a través de la siguiente liga:</p>
+
+		<a href="https://w > class="button">Regalar un regalo</a>
+
+		<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon"
+			class="batman-icon" style="top: 0; left: 0; width: 100px; height: 100px;">
+
+			<img src="https://1000logos.net/wp-content/uploads/2021/10/Batman-Logo.png" alt="Batman Icon"
+			class="batman-icon" style="top: 0; left: 0; width: 100px; height: 100px;">
+	</div>
+</body>
+
+</html>
+
+<script>
+
+	window.addEventListener('load', () => {
+		const icons = document.querySelectorAll('.batman-icon');
+		const iconCount = icons.length;
+		const docHeight = document.documentElement.clientHeight;
+
+		for (let i = 0; i < iconCount; i++) {
+			let icon = icons[i];
+			let delay = Math.random() * 5;
+			let xPos = Math.random() * 100;
+			let yPos = Math.random() * docHeight;
+
+			icon.style.left = xPos + '%';
+			icon.style.top = yPos + 'px';
+			icon.style.animationDelay = delay + 's';
+		}
+	});
+
+
+
+</script>
+
+
+
