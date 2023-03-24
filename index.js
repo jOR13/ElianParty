@@ -30,28 +30,13 @@ function confirmarAsistencia() {
     return false;
   }
 
-  // try {
-  //   let data = {
-  //     nombre: nombre,
-  //     cantidadAdultos: cantidadAdultos,
-  //     cantidadNinos: cantidadNinos,
-  //   };
+  let data = {
+    nombre: nombre,
+    cantidadAdultos: cantidadAdultos,
+    cantidadNinos: cantidadNinos,
+  };
 
-  //   const urlServer = "https://elian-party.herokuapp.com/api/save";
-
-  //   fetch(urlServer, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => console.log(res))
-  //     .catch((err) => console.log(err));
-  // } catch (error) {
-  //   console.log(error);
-  // }
+  sendData(data);
 
   alert(
     "¡Gracias por confirmar tu asistencia, " +
@@ -68,4 +53,22 @@ function confirmarAsistencia() {
     " niños. ¡Gracias!";
   let url = "https://api.whatsapp.com/send?phone=+526564046677&text=" + message;
   window.open(url, "_blank");
+}
+
+async function sendData(data) {
+  const urlServer = "https://elian-party.herokuapp.com/api/save";
+  try {
+    await fetch(urlServer, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  } catch (error) {
+    console.log(error);
+  }
 }
