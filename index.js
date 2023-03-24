@@ -30,6 +30,12 @@ function confirmarAsistencia() {
     return false;
   }
 
+  try {
+    sendDataToserver({nombre, cantidadAdultos, cantidadNinos});
+  } catch (error) {
+    console.log(error)
+  }
+
   alert(
     "¡Gracias por confirmar tu asistencia, " +
       nombre +
@@ -40,4 +46,26 @@ function confirmarAsistencia() {
     nombre +  " y voy a asistir con " + cantidadAdultos + " adultos y " + cantidadNinos + " niños. ¡Gracias!";
   let url = "https://api.whatsapp.com/send?phone=+526564046677&text=" + message;
   window.open(url, "_blank");
+}
+
+
+function sendDataToserver(data){
+console.log(data)
+//  const URL = 'http://localhost:3000/api/save'
+ const URL = 'https://elian-party.herokuapp.com/api/save'
+
+
+  fetch(URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(res => console.log(res))
+  .catch(err => console.log(err))
+
+
+
 }
