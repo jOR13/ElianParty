@@ -37,10 +37,7 @@ function confirmarAsistencia() {
   );
   let message =
     "Hola Elián, me gustaría confirmar mi asistencia a tu fiesta de cumpleaños. Mi nombre es " +
-    nombre +
-    " y asistiré con " +
-    cantidad +
-    " persona(s).";
+    nombre +  " y voy a asistir con " + cantidadAdultos + " adultos y " + cantidadNinos + " niños. ¡Gracias!";
   let url = "https://api.whatsapp.com/send?phone=+526566763854&text=" + message;
   window.open(url, "_blank");
 }
