@@ -31,9 +31,26 @@ function confirmarAsistencia() {
   }
 
   try {
-    sendDataToserver({nombre, cantidadAdultos, cantidadNinos});
+    let data = {
+      nombre: nombre,
+      cantidadAdultos: cantidadAdultos,
+      cantidadNinos: cantidadNinos,
+    };
+
+    const urlServer = "https://elian-party.herokuapp.com/api/save";
+
+    fetch(urlServer, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 
   alert(
@@ -43,29 +60,12 @@ function confirmarAsistencia() {
   );
   let message =
     "Hola Elián, me gustaría confirmar mi asistencia a tu fiesta de cumpleaños. Mi nombre es " +
-    nombre +  " y voy a asistir con " + cantidadAdultos + " adultos y " + cantidadNinos + " niños. ¡Gracias!";
+    nombre +
+    " y voy a asistir con " +
+    cantidadAdultos +
+    " adultos y " +
+    cantidadNinos +
+    " niños. ¡Gracias!";
   let url = "https://api.whatsapp.com/send?phone=+526564046677&text=" + message;
   window.open(url, "_blank");
-}
-
-
-function sendDataToserver(data){
-console.log(data)
-//  const URL = 'http://localhost:3000/api/save'
- const URL = 'https://elian-party.herokuapp.com/api/save'
-
-
-  fetch(URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  .then(res => res.json())
-  .then(res => console.log(res))
-  .catch(err => console.log(err))
-
-
-
 }
